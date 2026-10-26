@@ -1,0 +1,217 @@
+/* StaNovant 2.3 — bảng màu hai chế độ, tương phản cao trên mọi trang.
+ * Load cuối cùng để không bị những quy tắc cũ ghi đè.
+ */
+:root{
+  --ui-heading:#142d5b;--ui-text:#203759;--ui-muted:#557094;
+  --ui-surface:#ffffff;--ui-surface-soft:#f4f9ff;--ui-border:#d8e7f8;
+  --ui-link:#155abe;--ui-focus:#ffc86f;
+  color-scheme:light;
+}
+html[data-theme="dark"]{
+  --ui-heading:#f1f6ff;--ui-text:#e6efff;--ui-muted:#bfd0ec;
+  --ui-surface:#182b4f;--ui-surface-soft:#132747;--ui-border:#36517d;
+  --ui-link:#a0d2ff;--ui-focus:#ffdc86;
+  color-scheme:dark;
+}
+html{background:#f7fbff}
+html[data-theme="dark"]{background:#101e37}
+body{color:var(--ui-text)}
+:focus-visible{outline:3px solid var(--ui-focus)!important;outline-offset:3px}
+
+/* Trang đăng ký / đăng nhập — tông trời xanh, mây, sao và biểu tượng học tập */
+.auth-screen{
+  isolation:isolate;
+  background-image:url('/assets/auth-sky.svg')!important;
+  background-color:#e9f6ff!important;
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:cover!important;
+}
+html[data-theme="dark"] .auth-screen{
+  background-image:url('/assets/auth-sky-night.svg')!important;
+  background-color:#13284b!important;
+}
+.auth-screen::before{display:none}
+.auth-screen::after{display:none}
+.auth-ornaments{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.auth-ornaments .decor{position:absolute;display:grid;place-items:center;font-size:40px;filter:drop-shadow(0 8px 13px #4f8fd02d);opacity:.96}
+.auth-ornaments .decor-book{top:22%;left:3%;font-size:74px;transform:rotate(-13deg)}
+.auth-ornaments .decor-star{top:45%;left:7%;font-size:46px;transform:rotate(9deg)}
+.auth-ornaments .decor-flask{top:11%;left:50%;font-size:53px;transform:rotate(-12deg)}
+.auth-ornaments .decor-notebook{top:34%;right:2%;font-size:61px;transform:rotate(8deg)}
+.auth-ornaments .decor-atom{top:13%;right:7%;font-size:42px;transform:rotate(-11deg)}
+.auth-ornaments .decor-sparkle{bottom:15%;right:4%;font-size:40px}
+.auth-ornaments .decor-pencil{bottom:30%;left:3%;font-size:43px;transform:rotate(-25deg)}
+.auth-ornaments .decor-moon{top:7%;right:25%;font-size:39px;transform:rotate(15deg)}
+html[data-theme="dark"] .auth-ornaments .decor{opacity:.65;filter:drop-shadow(0 9px 10px #050b1b90)}
+.auth-header,.auth-layout{z-index:1}
+.auth-header{max-width:1500px;padding-inline:30px}
+.auth-layout{max-width:1400px;grid-template-columns:minmax(0,1.12fr) minmax(390px,.88fr);gap:52px;margin-top:0;padding:43px 34px 88px;min-height:calc(100svh - 78px)}
+.auth-hello{min-height:580px;padding-top:22px;padding-right:0}
+.auth-hello h1{color:#132e63!important;text-wrap:balance}
+.auth-hello>p{color:#44698d!important;max-width:590px}
+.bubble-label{background:#ffffffdf!important;color:#315f91!important;border-color:#bddbf8!important}
+.auth-reasons{margin-top:28px;gap:13px}
+.auth-reasons div,.auth-reasons span{color:#244e82!important}
+.auth-illustration{width:55%;max-width:410px;right:-4%;bottom:8px;z-index:-1;border-radius:40px;box-shadow:0 15px 40px #407fce25}
+.auth-illustration img{width:100%;display:block;height:auto}
+.auth-card{background:#fffffff4!important;border:1px solid #d7e7f8!important;box-shadow:0 22px 65px #538ec230!important;backdrop-filter:blur(16px)}
+.auth-card h2{color:#152e5e}
+.auth-card>p{color:#4c6a92}
+.auth-tabs{background:#eaf2ff!important;border:1px solid #dae8fa}
+.auth-tabs button{color:#456a98!important}
+.auth-tabs button.active{color:#155cce!important;background:white!important}
+.form-field>span:first-child{color:#203a66!important}
+.form-field input{background:#edf5ff!important;border-color:#cadcf3!important;color:#172b52!important}
+.form-field input::placeholder{color:#6c81a2}
+.password-input{background:#edf5ff!important;border-color:#cadcf3!important;border-radius:12px}
+.password-input input{background:transparent!important;border:0!important}
+.password-input button{color:#536d96}
+.auth-help{color:#597598!important}
+.auth-hello .auth-reasons{position:relative;z-index:2}
+.auth-card .primary-btn{box-shadow:0 9px 18px #438ceb2e}
+
+/* Night auth view: keep the illustration and decorative sky, but all writing legible */
+html[data-theme="dark"] .auth-hello h1{color:#f3f8ff!important}
+html[data-theme="dark"] .auth-hello h1 span{color:#83baff!important}
+html[data-theme="dark"] .auth-hello>p{color:#dfebff!important}
+html[data-theme="dark"] .bubble-label{background:#172d54e8!important;color:#e7f2ff!important;border-color:#476ca1!important}
+html[data-theme="dark"] .auth-reasons div,html[data-theme="dark"] .auth-reasons span{color:#ebf4ff!important}
+html[data-theme="dark"] .auth-card{background:#192e53f7!important;border-color:#3a5887!important;box-shadow:0 20px 65px #050b20aa!important}
+html[data-theme="dark"] .auth-card h2{color:#f4f8ff!important}
+html[data-theme="dark"] .auth-card>p{color:#bed0ed!important}
+html[data-theme="dark"] .auth-tabs{background:#122544!important;border-color:#34507b!important}
+html[data-theme="dark"] .auth-tabs button{color:#e1ecff!important}
+html[data-theme="dark"] .auth-tabs button.active{background:#edf5ff!important;color:#1555b2!important}
+html[data-theme="dark"] .form-field>span:first-child{color:#f2f7ff!important}
+html[data-theme="dark"] .form-field input,html[data-theme="dark"] .password-input{background:#243d66!important;border-color:#49689b!important;color:#fff!important}
+html[data-theme="dark"] .password-input input{background:transparent!important;border:0!important}
+html[data-theme="dark"] .form-field input::placeholder{color:#b4c8e8!important}
+html[data-theme="dark"] .password-input button{color:#e0edff!important}
+html[data-theme="dark"] .auth-help{color:#c5d7f5!important}
+html[data-theme="dark"] .auth-flower{color:#99c5ff!important}
+
+/* Nội dung chung — tránh trường hợp chữ xanh trên nền xanh đen */
+html[data-theme="dark"] .main-content{background:linear-gradient(145deg,#0e1c36,#142744 80%)!important}
+html[data-theme="dark"] .page-heading{background:linear-gradient(105deg,#1c355b,#172d4f)!important;border:1px solid #35517e!important}
+html[data-theme="dark"] .page-heading h1{color:var(--ui-heading)!important}
+html[data-theme="dark"] .page-heading p{color:var(--ui-muted)!important}
+html[data-theme="dark"] .panel,html[data-theme="dark"] .widget,html[data-theme="dark"] .course-card,html[data-theme="dark"] .stat-tile{background:var(--ui-surface)!important;border-color:var(--ui-border)!important;color:var(--ui-text)!important}
+html[data-theme="dark"] .panel h1,html[data-theme="dark"] .panel h2,html[data-theme="dark"] .panel h3,html[data-theme="dark"] .section-bar h2,html[data-theme="dark"] .widget h2,html[data-theme="dark"] .widget h3,html[data-theme="dark"] .course-details h3{color:var(--ui-heading)!important}
+html[data-theme="dark"] .panel p,html[data-theme="dark"] .course-details p,html[data-theme="dark"] .lesson-text,html[data-theme="dark"] .lesson-text p,html[data-theme="dark"] .course-meta,html[data-theme="dark"] .course-meta strong,html[data-theme="dark"] .small-caption,html[data-theme="dark"] .stat-tile span,html[data-theme="dark"] .account-line span{color:var(--ui-muted)!important}
+html[data-theme="dark"] .section-bar a,html[data-theme="dark"] .section-bar button,html[data-theme="dark"] .back-link,html[data-theme="dark"] .lesson-row .tick{color:var(--ui-link)!important}
+html[data-theme="dark"] .lesson-row,html[data-theme="dark"] .review-option,html[data-theme="dark"] .battle-choice{background:#112444!important;border:1px solid #38547f!important;color:#e8f2ff!important}
+html[data-theme="dark"] .lesson-row strong,html[data-theme="dark"] .lesson-row span,html[data-theme="dark"] .review-option strong{color:#edf5ff!important}
+html[data-theme="dark"] .lesson-row small{color:#bfd0ec!important}
+html[data-theme="dark"] .lesson-row.active,html[data-theme="dark"] .review-option.chosen{background:#234b7d!important;border-color:#7db4ff!important}
+html[data-theme="dark"] .lesson-row.complete{background:#173a37!important;border-color:#3f796c!important}
+html[data-theme="dark"] .lesson-row:hover,html[data-theme="dark"] .review-option:hover:not(:disabled){background:#244574!important}
+html[data-theme="dark"] .review-option.correct,html[data-theme="dark"] .battle-choice.correct{background:#164737!important;border-color:#56b18c!important;color:#ebfff5!important}
+html[data-theme="dark"] .review-option.wrong,html[data-theme="dark"] .battle-choice.wrong{background:#4c2639!important;border-color:#e398aa!important;color:#fff2f6!important}
+html[data-theme="dark"] .lesson-example,html[data-theme="dark"] .notice,html[data-theme="dark"] .battle-result{background:#203b63!important;border-color:#4a76aa!important;color:#e7f2ff!important}
+html[data-theme="dark"] .panel .notice,html[data-theme="dark"] .panel .battle-result{color:#eaf3ff!important}
+html[data-theme="dark"] .stat-tile b{color:#91bdff!important}
+html[data-theme="dark"] .account-line{border-bottom-color:#3a5279}
+html[data-theme="dark"] .sidebar-tip{background:linear-gradient(145deg,#1e3c68,#284673)!important}
+html[data-theme="dark"] .tip-copy strong{color:#b9d8ff!important}
+html[data-theme="dark"] .tip-copy p{color:#d7e4fb!important}
+html[data-theme="dark"] .sidebar-footer{color:#bfd0ea!important}
+html[data-theme="dark"] .top-search input{color:#f3f7ff!important}
+html[data-theme="dark"] .dashboard-hero{background:linear-gradient(105deg,#284c77,#1e3a67 70%,#254c76)!important;border-color:#365883!important}
+html[data-theme="dark"] .dashboard-hero .hero-text h1,html[data-theme="dark"] .dashboard-hero h1{color:#f3f8ff!important}
+html[data-theme="dark"] .dashboard-hero .hero-text p,html[data-theme="dark"] .dashboard-hero p{color:#e0ecff!important}
+html[data-theme="dark"] .eyebrow{color:#9dc9ff!important}
+html[data-theme="dark"] .muted{color:var(--ui-muted)!important}
+html[data-theme="dark"] .secondary-btn{background:#233d67!important;color:#e6f1ff!important;border-color:#699ee0!important}
+html[data-theme="dark"] .course-progress::-webkit-progress-bar{background:#30476e!important}
+html[data-theme="dark"] .course-progress{background:#30476e!important}
+html[data-theme="dark"] .meter-track,html[data-theme="dark"] .hp-track{background:#3a5077!important}
+html[data-theme="dark"] .periodic-controls label,html[data-theme="dark"] .element-details p{color:#c8dafa!important}
+html[data-theme="dark"] .periodic-controls input,html[data-theme="dark"] .periodic-controls select{color:#eef6ff!important;background:#122747!important;border-color:#395982!important}
+/* Các ô nguyên tố có màu sáng và dùng mực tối để luôn dễ đọc. */
+html[data-theme="dark"] .element-tile,html[data-theme="dark"] .elem-pills button,html[data-theme="dark"] .big-symbol{color:#183253!important}
+html[data-theme="dark"] .element-tile small{color:#425777!important}
+html[data-theme="dark"] .element-tile em{color:#324d6b!important}
+html[data-theme="dark"] .battle-stage{border-color:#456895!important}
+html[data-theme="dark"] .fighter-hud{background:#182c4ff5!important;color:#eef6ff!important;border:1px solid #3a5989}
+html[data-theme="dark"] .fighter small{color:#edf6ff!important}
+html[data-theme="dark"] .battle-result{color:#ecf4ff!important}
+html[data-theme="dark"] .mini-badge{background:#253f64!important;color:#eaf4ff!important}
+html[data-theme="dark"] .course-tag{color:#fff!important}
+html[data-theme="dark"] .avatar-btn{background:#274267!important;border-color:#4b6e9e!important}
+html[data-theme="dark"] .avatar-initials{color:#f3f8ff!important}
+/* Light mode refinements for small text on white cards. */
+html:not([data-theme="dark"]) .stat-tile span,html:not([data-theme="dark"]) .lesson-row small,html:not([data-theme="dark"]) .course-meta,html:not([data-theme="dark"]) .course-details p{color:#4b6589}
+html:not([data-theme="dark"]) .lesson-row strong{color:#183863}
+html:not([data-theme="dark"]) .page-heading h1{color:#13336b}
+html:not([data-theme="dark"]) .panel{color:#263e63}
+@media(max-width:1250px){.auth-ornaments .decor-book,.auth-ornaments .decor-notebook{opacity:.42}}
+@media(max-width:790px){.auth-layout{grid-template-columns:1fr;max-width:700px;gap:16px;padding:22px 22px 65px}.auth-hello{min-height:auto;padding:8px 0 5px}.auth-hello h1{font-size:clamp(30px,6.5vw,45px);margin:16px 0}.auth-illustration{display:none}.auth-reasons{display:none}.auth-card{margin:0 auto}.auth-ornaments .decor{opacity:.25}.auth-ornaments .decor-book{top:14%;left:1%}.auth-ornaments .decor-notebook{right:-3%}.auth-screen{background-position:center!important}}
+@media(max-width:560px){.auth-layout{padding:10px 14px 45px}.auth-header{padding:12px 16px}.auth-card{padding:25px 21px}.auth-hello>p{font-size:14px}.auth-hello h1{font-size:31px}.auth-ornaments .decor{font-size:26px!important}.auth-ornaments .decor-flask,.auth-ornaments .decor-notebook{display:none}}
+@media(prefers-reduced-motion:reduce){.auth-ornaments .decor{animation:none!important}}
+/* Tránh vật trang trí chồng lên phần tiêu đề khi thu nhỏ cửa sổ. */
+@media(min-width:791px){
+  .auth-layout{max-width:1250px}
+  .auth-ornaments .decor-star{left:2%}
+  .auth-illustration{
+    border-radius:0;box-shadow:none;
+    -webkit-mask-image:radial-gradient(ellipse 78% 79% at 50% 51%,#000 63%,transparent 100%);
+    mask-image:radial-gradient(ellipse 78% 79% at 50% 51%,#000 63%,transparent 100%);
+  }
+}
+/* Phần tên thương hiệu và liên kết nhỏ trên dashboard phải nổi trên nền tối. */
+html[data-theme="dark"] .dashboard-hero .hero-text h1 span,
+html[data-theme="dark"] .dashboard-hero h1 span{color:#93caff!important}
+html[data-theme="dark"] .widget a,html[data-theme="dark"] .widget button,
+html[data-theme="dark"] .section-bar a,html[data-theme="dark"] .section-bar button{color:#a6d3ff!important}
+/* Hình minh họa độc lập như một chiếc sticker, không cắt chữ trong ảnh. */
+@media(min-width:791px){
+  .auth-illustration{
+    -webkit-mask-image:none;mask-image:none;
+    border-radius:24px;box-shadow:0 12px 38px #4487cc22;
+    transform:rotate(-2deg);
+  }
+}
+@media(max-width:560px){.auth-ornaments .decor{display:none!important}}
+
+/* Chữ nhỏ ở phần điều khoản và gợi ý vẫn đủ độ nổi. */
+html[data-theme="dark"] .terms,html[data-theme="dark"] .terms span{color:#e4edff!important}
+html[data-theme="dark"] .terms a{color:#9ed2ff!important;text-decoration:underline}
+html[data-theme="dark"] .form-error{background:#4b2735!important;color:#ffeaf0!important;border-color:#a8687b!important}
+html[data-theme="dark"] .section-bar h2,html[data-theme="dark"] .panel h2{color:#f1f6ff!important}
+/* v2.4: sửa ô gợi ý ở cả hai chế độ và animation theme. */
+html:not([data-theme="dark"]) .widget .lesson-row,
+html:not([data-theme="dark"]) .widget .lesson-row strong,
+html:not([data-theme="dark"]) .widget .lesson-row span,
+html:not([data-theme="dark"]) .widget .lesson-row small{color:#1d416f!important}
+html:not([data-theme="dark"]) .widget .lesson-row{background:#f3f8ff!important;border:1px solid #cadef6!important}
+html[data-theme="dark"] .widget .lesson-row,
+html[data-theme="dark"] .widget .lesson-row strong,
+html[data-theme="dark"] .widget .lesson-row span{color:#eef6ff!important}
+html[data-theme="dark"] .widget .lesson-row small{color:#b8d4f6!important}
+html[data-theme="dark"] .widget .lesson-row{background:#1b3558!important;border:1px solid #476a98!important}
+html[data-theme="dark"] .widget .lesson-row:hover{background:#244872!important}
+html[data-theme="dark"] .widget .section-bar h2{color:#f4f9ff!important}
+html[data-theme="dark"] .widget .section-bar a{color:#a9d4ff!important}
+/* Kiểu hình nền login vẫn là bầu trời pastel; loại ảnh học sinh */
+.auth-illustration{display:none!important}
+.auth-layout{max-width:1220px!important;grid-template-columns:minmax(0,1.1fr) minmax(360px,.9fr)!important;gap:56px!important}
+.auth-hello{min-height:490px!important;padding-top:55px;position:relative}
+.auth-hello::after{content:"📚 ✨ 🧪";position:absolute;bottom:18px;left:18px;font-size:44px;letter-spacing:24px;opacity:.8;filter:drop-shadow(0 8px 15px #699eda33)}
+.auth-card{z-index:2!important}
+:root{--theme-transition-duration:.42s}
+body,.auth-screen,.auth-card,.auth-tabs,.auth-tabs button,.topbar,.sidebar,.main-content,.panel,.widget,.course-card,.stat-tile,.page-heading,.lesson-row,.review-option,.theme-toggle,.dashboard-hero,.battle-stage,.battle-choice,.course-details,.fighter-hud,.tip-copy,.top-search,input,textarea,select,button:not(.fighter){transition:background-color var(--theme-transition-duration) ease,color var(--theme-transition-duration) ease,border-color var(--theme-transition-duration) ease,box-shadow var(--theme-transition-duration) ease,fill var(--theme-transition-duration) ease}
+html.theme-changing::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:400;background:linear-gradient(110deg,transparent 15%,#83baff13 45%,transparent 80%);animation:themeWave .5s ease-out forwards}
+@keyframes themeWave{from{opacity:0;transform:translateX(-24%)}35%{opacity:1}to{opacity:0;transform:translateX(22%)}}
+@media(max-width:790px){.auth-layout{grid-template-columns:1fr!important;gap:15px!important}.auth-hello{min-height:auto!important;padding-top:8px}.auth-hello::after{display:none}}
+@media(prefers-reduced-motion:reduce){:root{--theme-transition-duration:0s}html.theme-changing::after{animation:none!important}}
+.route-transition{position:fixed;inset:0;z-index:500;background:rgba(16,38,75,.28);backdrop-filter:blur(7px);opacity:0;transition:opacity .25s ease;display:grid;place-items:center}
+.route-transition.visible{opacity:1}.route-transition-inner{min-width:230px;border-radius:25px;background:#fff;color:#18386a;border:1px solid #cee3fb;box-shadow:0 15px 50px #18385a3f;display:flex;flex-direction:column;align-items:center;gap:9px;padding:30px}.route-transition-inner b{font-size:24px}.route-transition-inner small{color:#54749b}
+html[data-theme="dark"] .route-transition-inner{background:#162a4a;border-color:#36527d;color:#fff}html[data-theme="dark"] .route-transition-inner small{color:#c8dafa}
+.new-catalog{margin-top:24px}.new-catalog h2{color:var(--ui-heading,#193b70)}.new-catalog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:15px}.new-catalog-card{display:flex;flex-direction:column;gap:9px;border-radius:17px;padding:20px;background:#eff7ff;border:1px solid #cfe4fb}.new-catalog-card strong{color:#1a4d8a;font-size:17px}.new-catalog-card span{color:#42638c;font-size:13px}html[data-theme="dark"] .new-catalog-card{background:#193354;border-color:#395e8c}html[data-theme="dark"] .new-catalog-card strong{color:#f5faff}html[data-theme="dark"] .new-catalog-card span{color:#c4dbff}
+
+/* v2.5: only real network-loading, no forced delay; catalog cards accessible in both themes */
+.catalog-empty{padding:43px 24px;border-radius:22px;border:1px dashed var(--line,#c8d9f4);background:var(--ui-card,#fff);text-align:center;color:var(--ui-heading,#183b6f)}.catalog-empty p{color:var(--ui-muted,#5f7b9e)}.empty-emoji{font-size:44px}.new-catalog-grid{margin:14px 0 25px}.catalog-icon{font-size:31px}.new-catalog-card small{color:var(--ui-muted,#65829f);font-weight:700}.new-catalog-card b{font-size:13px;color:#277be9}.new-catalog-card{gap:11px;min-height:205px}.new-catalog-card:hover{transform:translateY(-2px);box-shadow:0 10px 24px #376fb626}.dashboard-hero .hero-text{max-width:100%}.dashboard-hero .hero-art{display:none!important}.route-transition,.route-loading{display:none!important}html[data-theme="dark"] .catalog-empty{background:#172d4c;color:#f2f7ff;border-color:#415f8a}html[data-theme="dark"] .catalog-empty p{color:#c7daef}html[data-theme="dark"] .new-catalog-card small{color:#c7dcf9}html[data-theme="dark"] .new-catalog-card b{color:#a8d2ff}
+
+/* v2.5 artwork: richer original sci-fi character art */
+.battle-stage{background:radial-gradient(circle at 22% 45%,#1d6caa65,transparent 34%),radial-gradient(circle at 78% 40%,#c14f6f44,transparent 35%),linear-gradient(140deg,#071932,#142e55 54%,#171637)!important;border:1px solid #5072a5!important;box-shadow:0 16px 38px #12315b36;min-height:380px}.fight-scene{height:300px!important;align-items:end;justify-content:space-around}.fighter-card{width:38%;max-width:270px;position:relative}.fighter-card img{width:100%;max-width:250px;height:255px;object-fit:contain;filter:drop-shadow(0 0 24px #4a96e755);transition:filter .2s}.fighter-card.monster img{filter:drop-shadow(0 0 27px #dd658655)}.fighter-card .fighter-aura{opacity:.8;background:radial-gradient(circle,#3b95f14d,transparent 71%)}.fighter-card.monster .fighter-aura{background:radial-gradient(circle,#f556754d,transparent 71%)}.fighter-card small{color:#fff!important;text-shadow:0 2px 9px #08182d;font-size:15px}.fighter-hud{background:#101f3fe9!important;color:#f0f6ff!important;border:1px solid #4b719e;backdrop-filter:blur(9px)}.fighter-hud.right{border-color:#ae567f}.battle-flash{z-index:3;filter:drop-shadow(0 0 24px #fff)}@media(max-width:560px){.fight-scene{height:215px!important}.fighter-card img{height:170px;max-width:150px}.fighter-card{width:46%}.battle-stage{min-height:320px}}

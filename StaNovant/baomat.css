@@ -1,0 +1,7 @@
+/* Trang thông tin công khai, không yêu cầu đăng nhập. */
+.policy-body{background:linear-gradient(125deg,#f0f9ff,#fff 55%,#dcedff);min-height:100vh;color:#183e62;}
+.policy-header{display:flex;justify-content:space-between;gap:20px;padding:22px clamp(16px,5vw,75px);align-items:center;background:#ffffffd9;border-bottom:1px solid #d9e9fa;}
+.policy-brand{font-size:25px;font-weight:850;color:#1c3159;text-decoration:none}.policy-brand span{color:#287bf0}.policy-back{font-weight:700;color:#287bf0}
+.policy-panel{max-width:840px;margin:45px auto 80px;padding:clamp(20px,4vw,42px);border:1px solid #dbeafa;border-radius:24px;background:white;box-shadow:0 14px 40px #5190c31a;}
+.policy-panel h1{font-size:clamp(26px,3.5vw,40px);line-height:1.2;margin:18px 0 26px}.policy-panel h2{font-size:19px;margin:24px 0 9px}.policy-panel p{font-size:15px;line-height:1.8;color:#59728d}.policy-panel .policy-warning{padding:12px 15px;border-radius:12px;background:#edf7ff;color:#265c91;border:1px solid #c7e5fb}.policy-footer{padding:22px;text-align:center;color:#7890aa;font-size:13px}
+@media(max-width:850px){.policy-panel{margin:24px 16px 45px}}

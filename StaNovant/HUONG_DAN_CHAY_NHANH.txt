@@ -1,0 +1,9 @@
+StaNovant 2.5 FULL
+1. Giải nén ZIP, mở thư mục StaNovant
+2. Terminal: $env:Path += ";C:\Program Files\nodejs"
+3. Nếu chưa có admin: npm.cmd run admin:create
+4. Chạy npm.cmd start
+5. Mở http://127.0.0.1:3000
+6. Admin -> Cấp quyền học để bật quyền theo học viên
+7. Chỉ course Admin đăng/công khai mới hiển thị
+8. Đừng tải data/*.sqlite hoặc data/uploads lên GitHub

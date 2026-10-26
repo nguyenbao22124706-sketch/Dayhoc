@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="vi">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="description" content="StaNovant – Học tập, sáng tạo và tiên phong. Các khóa học, bảng tuần hoàn và trắc nghiệm tương tác.">
+ <meta name="theme-color" content="#f6fbff">
+ <title>Trang đầu StaNovant | StaNovant</title>
+ <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+ <link rel="stylesheet" href="/style.css">
+ <link rel="stylesheet" href="/theme.css">
+ <link rel="stylesheet" href="/index.css">
+ <script defer src="/elements.js"></script><script defer src="/index.js"></script><script defer src="/app.js"></script>
+</head>
+<body data-page="welcome">
+ <div id="initial-loader" class="initial-loader" role="status" aria-live="polite"><span class="initial-logo">🎓 <b>Sta<span>Novant</span></b></span><span class="spinner"></span><small>Đang chuẩn bị góc học tập của bạn...</small></div>
+ <section id="auth-screen" class="auth-screen" hidden>
+  <div class="auth-ornaments" aria-hidden="true"><span class="decor decor-book">📖</span><span class="decor decor-star">🌟</span><span class="decor decor-flask">🧪</span><span class="decor decor-notebook">📋</span><span class="decor decor-atom">⚛️</span><span class="decor decor-sparkle">✨</span><span class="decor decor-pencil">✏️</span><span class="decor decor-moon">🌙</span></div>
+  <header class="auth-header"><a class="brand" href="/index.html"><span class="brand-icon">🎓</span>Sta<span>Novant</span></a><span class="brand-motto">Standards · Creativity · Pioneering</span></header>
+  <div class="auth-layout">
+   <div class="auth-hello">
+    <div class="bubble-label">✨ Học hôm nay · Sáng tạo ngày mai</div>
+    <h1>Cùng nhau <span>khám phá</span><br>thế giới tri thức!</h1>
+    <p>StaNovant là không gian học tập của riêng bạn: bài học dễ hiểu, trắc nghiệm vui nhộn và những công cụ khám phá khoa học.</p>
+    <div class="auth-reasons"><div>📖 <span>Khóa học trực quan</span></div><div>⚔️ <span>Thi đấu trắc nghiệm</span></div><div>🧪 <span>Bảng tuần hoàn tương tác</span></div></div>
+    
+   </div>
+   <div class="auth-card">
+    <div class="auth-flower" aria-hidden="true">✿</div>
+    <h2 id="auth-title">Chào mừng trở lại! 💙</h2><p id="auth-subtitle">Đăng nhập để tiếp tục học cùng StaNovant.</p>
+    <div class="auth-tabs" role="tablist" aria-label="Tài khoản"><button type="button" id="tab-login" class="active" data-auth-tab="login" role="tab" aria-selected="true">Đăng nhập</button><button type="button" id="tab-register" data-auth-tab="register" role="tab" aria-selected="false">Đăng ký</button></div>
+    <form id="auth-form" novalidate>
+     <label class="form-field" id="name-field" hidden><span>Họ và tên</span><input id="auth-name" name="name" placeholder="Tên của bạn" autocomplete="name" maxlength="80"></label>
+     <label class="form-field"><span>Email hoặc tên quản trị</span><input id="auth-email" name="email" type="text" autocomplete="username" placeholder="name@example.com hoặc admin" maxlength="254" required></label>
+     <label class="form-field"><span>Mật khẩu</span><span class="password-input"><input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Ít nhất 8 ký tự" minlength="8" maxlength="128" required><button type="button" id="toggle-password" aria-label="Hiện mật khẩu">👁</button></span></label>
+     <label class="terms" id="terms-field" hidden><input id="terms-check" type="checkbox"><span>Tôi đã đọc và đồng ý với <a href="/dieukhoan.html">điều khoản thử nghiệm</a>.</span></label>
+     <div id="auth-error" class="form-error" role="alert" hidden></div>
+     <button class="primary-btn full" id="submit-auth" type="submit">Đăng nhập →</button>
+    </form><p class="auth-help">🔒 Tài khoản thử nghiệm. Không dùng lại mật khẩu quan trọng.</p>
+   </div>
+  </div>
+ </section>
+ <div id="app-shell" class="app-shell" hidden>
+  <header class="topbar">
+   <div class="top-brand"><button id="sidebar-toggle" class="icon-btn" type="button" title="Thu gọn/mở rộng menu" aria-label="Thu gọn menu" aria-expanded="true">☰</button><a class="brand" href="/hocvien.html"><span class="brand-icon">🎓</span>Sta<span>Novant</span></a></div>
+   <label class="top-search"><span aria-hidden="true">⌕</span><input id="global-search" type="search" placeholder="Tìm khóa học, bài học, chủ đề..." aria-label="Tìm kiếm khóa học"></label>
+   <div class="top-spacer"></div><span class="welcome-name" id="top-username">Học viên</span><button class="avatar-btn" id="account-quick" type="button" title="Tài khoản" aria-label="Mở tài khoản"><span class="avatar-initials">SV</span></button>
+  </header>
+  <div class="sidebar-backdrop" id="sidebar-backdrop"></div>
+  <aside id="sidebar" class="sidebar" aria-label="Danh mục chính">
+   <nav class="sidebar-nav">
+    <a href="/hocvien.html" data-nav="home"><span class="nav-ico">⌂</span><span class="nav-label">Trang chủ</span></a>
+    <button type="button" id="duel-sidebar" class="nav-parent"><span class="nav-ico">⚔</span><span class="nav-label">Thi đấu</span><span class="nav-chevron">⌄</span></button>
+    <div class="nav-sub"><a href="/thidau.html" data-nav="battle"><span>•</span><span class="nav-label">Trắc nghiệm đối kháng</span></a></div>
+    <a href="/bangtuanhoan.html" data-nav="periodic"><span class="nav-ico">♧</span><span class="nav-label">Bảng tuần hoàn</span></a>
+    <a href="/ontap.html" data-nav="review"><span class="nav-ico">▤</span><span class="nav-label">Ôn tập</span></a>
+    <a href="/tiendo.html" data-nav="progress"><span class="nav-ico">▥</span><span class="nav-label">Tiến độ học</span></a>
+    <a href="/admin.html" data-admin-nav hidden class="admin-link"><span class="nav-ico">✦</span><span class="nav-label">Quản trị Admin</span></a><a href="/taikhoan.html" data-nav="account"><span class="nav-ico">♙</span><span class="nav-label">Tài khoản</span></a>
+   </nav>
+   <div class="sidebar-tip"><div class="robot-face">🤖 <span>💡</span></div><div class="tip-copy"><strong>Mẹo nhỏ mỗi ngày</strong><p>Học đều đặn một chút sẽ giúp bạn tiến xa hơn!</p></div></div>
+   <div class="sidebar-footer"><span class="nav-label">✦ Learn · Create · Lead</span></div>
+  </aside>
+  <main id="main" class="main-content" tabindex="-1"><div id="route-loading" class="route-loading" hidden><span class="spinner"></span><span>Đang mở bài học...</span></div><div id="view" aria-live="polite"></div></main>
+ </div>
+ <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>

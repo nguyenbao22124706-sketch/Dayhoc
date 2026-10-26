@@ -1,0 +1,17 @@
+{
+  "name": "stanovant-learning",
+  "version": "2.5.2",
+  "private": true,
+  "description": "StaNovant full multi-page learning website (HTML/CSS/JS + Node SQLite)",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/*.test.js",
+    "admin:create": "node scripts/tao-admin.js",
+    "backup": "node scripts/sao-luu.js",
+    "migrate:edublue": "node scripts/chuyen-tai-khoan-edublue.js"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}
